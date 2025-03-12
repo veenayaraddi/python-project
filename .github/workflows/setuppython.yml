@@ -30,7 +30,7 @@ jobs:
         cp -r tests/* artifacts/
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: test-results
         path: artifacts/
