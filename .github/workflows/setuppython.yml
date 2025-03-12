@@ -32,5 +32,5 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: test
+        name: tests
         path: artifacts/
