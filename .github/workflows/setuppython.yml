@@ -31,13 +31,13 @@ jobs:
         export PYTHONPATH=src
         pytest
 
- #   - name: Create directory and copy files
-  #    run: |
-    #    mkdir -p artifacts
-     #   cp -r tests/* artifacts/
+    - name: Create directory and copy files
+      run: |
+       mkdir -p artifacts
+       cp -r tests/* artifacts/
  
-   # - name: Upload artifacts
-    #  uses: actions/upload-artifact@v3
-     # with:
-       # name: tests
-       # path: artifacts/ 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: tests
+        path: artifacts/ 
