@@ -31,13 +31,11 @@ jobs:
         export PYTHONPATH=src
         pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Save the results in XML format
 
-    - name: Create directory and copy files
-      run: |
-       mkdir -p artifacts
-       cp -r tests/* artifacts/
+    - name: Create directory for test results
+      run: mkdir -p test-results  # Create a directory to store the test results
  
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+    - name: Upload test results as artifacts
+      uses: actions/upload-artifact@v2
       with:
-        name: tests-results
-        path: artifacts
+        name: test-results
+        path: test-results/results.xml  # Upload the test result file
