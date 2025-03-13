@@ -34,10 +34,10 @@ jobs:
     - name: Create directory and copy files
       run: |
        mkdir -p artifacts
-       cp -r tests/* artifacts/
+     #  cp -r tests/* artifacts/
  
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: tests
-        path: artifacts/ 
+        name: tests-results
+        path: artifacts/ results.xml
