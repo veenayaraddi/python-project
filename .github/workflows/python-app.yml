@@ -36,3 +36,8 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest
+        - name: Upload test results as artifacts
+           uses: actions/upload-artifact@v2  # Uploads the test results as artifacts
+           with:
+        name: test-results  # Name of the artifact
+        path: test-results/results.xml  # Path to the test results file
