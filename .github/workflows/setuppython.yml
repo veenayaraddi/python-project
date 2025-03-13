@@ -32,7 +32,7 @@ jobs:
         pytest  --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Run tests and output results to XML file
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: python-application-artifact
         path: artifacts/python_app.zip
