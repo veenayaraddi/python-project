@@ -30,11 +30,23 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Run tests and output results to XML file
+    - name: Create artifacts directory and file
+      run: |
+        mkdir -p artifacts
+        touch artifacts/python_app.zip
+
+    - name: List artifacts directory
+      run: ls -la artifacts
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: python-application-artifact
         path: artifacts/*.zip
+   # - name: Upload Artifact
+    #  uses: actions/upload-artifact@v4
+     # with:
+      #  name: python-application-artifact
+       # path: artifacts/*.zip
  
       
