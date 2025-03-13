@@ -34,6 +34,11 @@ jobs:
 
   #  - name: Create directory for test results
    #   run: mkdir -p test-results
+    - name: Package Application
+      run: |
+        mkdir -p artifacts
+        zip -r artifacts/python_app.zip . -x '*.git*' '*.github*' 'artifacts/*'
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
