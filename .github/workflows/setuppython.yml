@@ -1,6 +1,11 @@
 name: CI for Python Application
-
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
 
 jobs:
   build:
@@ -24,13 +29,13 @@ jobs:
       run: |
         pytest
 
-    - name: Create directory and copy files
-      run: |
-        mkdir -p artifacts
-        cp -r tests/* artifacts/
+ #   - name: Create directory and copy files
+  #    run: |
+    #    mkdir -p artifacts
+     #   cp -r tests/* artifacts/
  
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: tests
-        path: artifacts/
+   # - name: Upload artifacts
+    #  uses: actions/upload-artifact@v3
+     # with:
+       # name: tests
+       # path: artifacts/ 
