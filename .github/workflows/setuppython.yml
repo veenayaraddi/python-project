@@ -34,6 +34,11 @@ jobs:
 
   #  - name: Create directory for test results
    #   run: mkdir -p test-results
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-application-artifact
+        path: artifacts/python_app.zip
 
    # - name: Upload artifacts
    #   uses: astertom/nexus-upload-artifact@v1.1.0
