@@ -29,7 +29,7 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=src
-        pytest
+        pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Save the results in XML format
 
     - name: Create directory and copy files
       run: |
