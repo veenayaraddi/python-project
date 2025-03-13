@@ -36,15 +36,5 @@ jobs:
       with:
         name: python-application-artifact
         path: artifacts/*.zip
-  #  - name: Create directory for test results
-   #   run: mkdir -p test-results
-   
-
-   # - name: Upload artifacts
-   #   uses: astertom/nexus-upload-artifact@v1.1.0
-    #  with:
-      #  name: test-results
-      #  path: test-results/results.xml  # Upload the test result file
-      #  repositories: python-project/.github/workflows/
-       #   # Specify the Nexus repository name
-       # timeout: 60  # Timeout for upload
+ 
+      
