@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
@@ -31,11 +31,11 @@ jobs:
         export PYTHONPATH=src
         pytest  --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Run tests and output results to XML file
 
-    - name: Upload test results as artifacts
-      uses: actions/upload-artifact@v2  # Uploads the test results as artifacts
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: test-results  # Name of the artifact
-        path: test-results/results.xml  # Path to the test results file
+        name: python-application-artifact
+        path: artifacts/python_app.zip
   #  - name: Create directory for test results
    #   run: mkdir -p test-results
    
