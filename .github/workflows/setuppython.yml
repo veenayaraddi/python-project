@@ -29,7 +29,8 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=src
-        pytest 
+        pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Save the results in XML format
+
 
     - name: Create directory for test results
       run: mkdir -p test-results
@@ -39,3 +40,6 @@ jobs:
       with:
         name: test-results
         path: test-results/results.xml  # Upload the test result file
+        repositories: python-project/.github/workflows/
+          # Specify the Nexus repository name
+        timeout: 60  # Timeout for upload
