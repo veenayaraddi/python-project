@@ -25,15 +25,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests
+    - name: Create directory for test results
+      run: mkdir -p test-results  # Create a directory to store the test results
+
+    - name: Test with pytest
       run: |
         pip install pytest
         export PYTHONPATH=src
         pytest --maxfail=1 --disable-warnings --junitxml=test-results/results.xml  # Save the results in XML format
 
-    - name: Create directory for test results
-      run: mkdir -p test-results  # Create a directory to store the test results
- 
     - name: Upload test results as artifacts
       uses: actions/upload-artifact@v2
       with:
